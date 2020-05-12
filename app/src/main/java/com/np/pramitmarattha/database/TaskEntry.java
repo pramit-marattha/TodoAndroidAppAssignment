@@ -18,6 +18,12 @@ public class TaskEntry {
     private Date updatedAt;
 
     @Ignore
+    public class TaskEntry {
+    private int id;
+    private String description;
+    private int priority;
+    private Date updatedAt;
+  
     public TaskEntry(String description, int priority, Date updatedAt) {
         this.description = description;
         this.priority = priority;
