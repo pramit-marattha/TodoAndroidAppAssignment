@@ -1,10 +1,30 @@
 package com.np.pramitmarattha.database;
 import java.util.Date;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+
+@Entity(tableName = "task")
+public class TaskEntry {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    private String description;
+    private int priority;
+    @ColumnInfo(name="updated_at")
+    private Date updatedAt;
+
+    @Ignore
 public class TaskEntry {
     private int id;
     private String description;
     private int priority;
     private Date updatedAt;
+  
+  
     public TaskEntry(String description, int priority, Date updatedAt) {
         this.description = description;
         this.priority = priority;
