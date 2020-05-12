@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-
 import com.np.pramitmarattha.database.AppDatabase;
+import com.np.pramitmarattha.database.DateConverter;
 import com.np.pramitmarattha.database.TaskEntry;
 
 import java.util.Date;
@@ -47,6 +47,21 @@ public class AddEditTaskActivity extends AppCompatActivity {
         if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
             mButton.setText(R.string.update_button);
             if (mTaskId == DEFAULT_TASK_ID) {
+                mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
+                AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        final TaskEntry task = AppDatabase.getInstance(getApplicationContext()).taskDao().loadTaskById(mTaskId);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                populateUI(task);
+                            }
+                        });
+                    }
+
+                });
                 // populate the UI
             }
         }
@@ -80,9 +95,14 @@ public class AddEditTaskActivity extends AppCompatActivity {
      * @param task the taskEntry to populate the UI
      */
     private void populateUI(TaskEntry task) {
+        if(task == null){
 
+            return;
+        }else;{
+            mEditText.setText(task.getDescription());
+            setPriorityInViews(task.getPriority());
+        }
     }
-
     /**
      * onSaveButtonClicked is called when the "save" button is clicked.
      * It retrieves user input and inserts that new task data into the underlying database.
@@ -96,7 +116,15 @@ public class AddEditTaskActivity extends AppCompatActivity {
         AppDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
+                if(mTaskId == DEFAULT_TASK_ID){
+
                 AppDatabase.getInstance(getApplicationContext()).taskDao().insertTask(task);
+                }
+                else;
+                {
+                    task.setId(mTaskId);
+                    AppDatabase.getInstance(getApplicationContext()).taskDao().update(task);
+                }
             }
         });
         finish();

@@ -2,10 +2,8 @@ package com.np.pramitmarattha.database;
 
 import android.content.Context;
 import android.util.Log;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 import androidx.room.Dao;
 import androidx.room.Database;
 import androidx.room.Room;
