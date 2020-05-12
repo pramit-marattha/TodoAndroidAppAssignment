@@ -24,6 +24,7 @@ public class TaskEntry {
     private int priority;
     private Date updatedAt;
   
+
     public TaskEntry(String description, int priority, Date updatedAt) {
         this.description = description;
         this.priority = priority;
