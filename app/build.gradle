@@ -35,4 +35,3 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
     }
-
