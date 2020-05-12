@@ -8,6 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.np.pramitmarattha.database.AppDatabase;
+import com.np.pramitmarattha.database.TaskEntry;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemClickListener {
 
@@ -16,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
     // Member variables for the adapter and RecyclerView
     private RecyclerView mRecyclerView;
     private TaskAdapter mAdapter;
+
+    AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +64,28 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
                 startActivity(addTaskIntent);
             }
         });
-    }
 
+        database = AppDatabase.getInstance(getApplicationContext());
+
+    }
     @Override
     public void onItemClickListener(int itemId) {
         // Launch AddTaskActivity adding the itemId as an extra in the intent
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                final List<TaskEntry> tasks = database.taskDao().loadAllTasks();
+                 runOnUiThread(new Runnable() {
+                     @Override
+                     public void run() {
+                         mAdapter.setTasks(tasks);
+                     }
+                 });
+            }
+        });
     }
 }
