@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.TaskEntry;
 
@@ -89,6 +88,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     public void onSaveButtonClicked() {
         // Not yet implemented
+      
         String description = mEditText.getText().toString();
         int priority = getPriorityFromViews();
         Date date = new Date();
