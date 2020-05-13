@@ -2,7 +2,12 @@
 
 ---
 
-![TodoApp](https://i.ibb.co/SQKHL27/todo.png)
+# TODO.
+
+
+<p align="center">
+  <img src="https://i.ibb.co/SQKHL27/todo.png">
+</p>
 
 ---
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)
