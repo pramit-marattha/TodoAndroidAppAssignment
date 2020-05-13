@@ -7,15 +7,18 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 public class AddEditTaskViewModelFactoy extends ViewModelProvider.NewInstanceFactory {
-    public AddEditTaskViewModelFactoy(Application application, int taskId) {
+
+    Application application;
+    int taskId;
+
+    public AddEditTaskViewModelFactoy(Application application, int taskId){
         this.application = application;
         this.taskId = taskId;
     }
+
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new AddEditTaskViewModel(application, taskId);
+        return  (T) new AddEditTaskViewModel(application, taskId);
     }
-    Application application;
-    int taskId;
 }

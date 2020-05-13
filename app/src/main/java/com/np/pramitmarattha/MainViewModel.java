@@ -3,46 +3,34 @@ package com.np.pramitmarattha;
 
 import android.app.Application;
 import android.util.Log;
-
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.TaskEntry;
-
 import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 public class MainViewModel extends AndroidViewModel {
 
-private final static String TAG = MainViewModel.class.getSimpleName();
+        Repository repository;
 
-private LiveData<List<TaskEntry>> tasks;
-AppDatabase database;
+        private  LiveData<List<TaskEntry>> tasks;
 
-public MainViewModel(@NonNull Application application) {
-        super(application);
-        Log.d(TAG, "Actively retrieving the task from the database");
-        AppDatabase database = AppDatabase. getInstance(application);
-        tasks = database.taskDao().loadAllTasks();
-        }
-public LiveData<List<TaskEntry>> getTasks(){
-        return tasks;
+
+
+        public  MainViewModel(Application application){
+                super(application);
+                AppDatabase database = AppDatabase.getInstance(application);
+                repository = new Repository(database);
+                tasks = repository.getTasks();
         }
 
-
-        public void deleteTask(final TaskEntry task){
-
-                AppDatabase.databaseWriteExecutor.execute(new Runnable() {
-                        @Override
-                        public void run() {
-
-                                database.taskDao().deleteTask(task);
-
-
-                        }
-                });
-
+        public LiveData<List<TaskEntry>> getTasks(){
+                return tasks;
         }
 
+        public void deleteTask(TaskEntry task){
+                repository.deleteTask(task);
         }
+
+}

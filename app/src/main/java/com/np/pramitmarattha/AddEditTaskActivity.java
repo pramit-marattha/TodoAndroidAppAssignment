@@ -1,9 +1,10 @@
 package com.np.pramitmarattha;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +15,9 @@ import android.widget.RadioGroup;
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.DateConverter;
 import com.np.pramitmarattha.database.TaskEntry;
-
 import java.util.Date;
 import java.util.Observable;
+
 
 public class AddEditTaskActivity extends AppCompatActivity {
 
@@ -39,11 +40,14 @@ public class AddEditTaskActivity extends AppCompatActivity {
 
     private int mTaskId = DEFAULT_TASK_ID;
 
+
     AddEditTaskViewModel viewModel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_task);
+
+
 
         initViews();
 
@@ -52,64 +56,30 @@ public class AddEditTaskActivity extends AppCompatActivity {
         }
 
         Intent intent = getIntent();
+
         if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
             mButton.setText(R.string.update_button);
+
             if (mTaskId == DEFAULT_TASK_ID) {
+                // populate the UI
+
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-
-                AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(),mTaskId);
-                final AddEditTaskViewModel viewModel = ViewModelProviders.of(this,factory).get(AddEditTaskViewModel.class);
-
+                AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
+                viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
 
                 viewModel.getTask().observe(this, new Observer<TaskEntry>() {
-                            @Override
-                            public void onChanged(TaskEntry taskEntry) {
-                                Log.d(TAG,"Receving Database Update");
-                                viewModel.getTask().removeObserver(this);
-                                populateUI(taskEntry);
+                    @Override
+                    public void onChanged(TaskEntry taskEntry) {
+                        viewModel.getTask().removeObserver(this);
+                        populateUI(taskEntry);
+                    }
+                });
 
-                            }
-                        });
-                        // populate the UI
             }
+        }else{
+            AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
+            viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
         }
-//
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_edit_task);
-//
-//
-//
-//        initViews();
-//
-//        if (savedInstanceState != null && savedInstanceState.containsKey(INSTANCE_TASK_ID)) {
-//            mTaskId = savedInstanceState.getInt(INSTANCE_TASK_ID, DEFAULT_TASK_ID);
-//        }
-//
-//        Intent intent = getIntent();
-//
-//        if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
-//            mButton.setText(R.string.update_button);
-//
-//            if (mTaskId == DEFAULT_TASK_ID) {
-//                // populate the UI
-//
-//                mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-//                AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
-//                viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
-//
-//                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
-//                    @Override
-//                    public void onChanged(TaskEntry taskEntry) {
-//                        viewModel.getTask().removeObserver(this);
-//                        populateUI(taskEntry);
-//                    }
-//                });
-//
-//            }
-//        }else{
-//            AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
-//            viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
-//        }
     }
 
     @Override
@@ -140,13 +110,6 @@ public class AddEditTaskActivity extends AppCompatActivity {
      * @param task the taskEntry to populate the UI
      */
     private void populateUI(TaskEntry task) {
-//        if(task == null){
-//
-//            return;
-//        }else;{
-//            mEditText.setText(task.getDescription());
-//            setPriorityInViews(task.getPriority());
-//        }
         if(task == null){
             return;
         }
@@ -154,6 +117,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
         setPriorityInViews(task.getPriority());
 
     }
+
     /**
      * onSaveButtonClicked is called when the "save" button is clicked.
      * It retrieves user input and inserts that new task data into the underlying database.
@@ -163,23 +127,15 @@ public class AddEditTaskActivity extends AppCompatActivity {
         String description = mEditText.getText().toString();
         int priority = getPriorityFromViews();
         Date date = new Date();
-        final TaskEntry task = new TaskEntry(description, priority, date);
-        AppDatabase.databaseWriteExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                if(mTaskId == DEFAULT_TASK_ID){
+        TaskEntry todo = new TaskEntry(description, priority, date);
+        if(mTaskId == DEFAULT_TASK_ID)
+            viewModel.insertTask(todo);
+        else{
+            todo.setId(mTaskId);
+            viewModel.updateTask(todo);
 
-                AppDatabase.getInstance(getApplicationContext()).taskDao().insertTask(task);
-                }
-                else;
-                {
-                    task.setId(mTaskId);
-                    AppDatabase.getInstance(getApplicationContext()).taskDao().update(task);
-                }
-            }
-        });
+        }
         finish();
-
 
     }
 
@@ -201,6 +157,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
         }
         return priority;
     }
+
     /**
      * setPriority is called when we receive a task from MainActivity
      *
