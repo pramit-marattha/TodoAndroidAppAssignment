@@ -2,6 +2,7 @@ package com.np.pramitmarattha;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,6 +39,8 @@ public class AddEditTaskActivity extends AppCompatActivity {
 
     private int mTaskId = DEFAULT_TASK_ID;
 
+    AddEditTaskViewModel viewModel;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_task);
@@ -53,12 +56,16 @@ public class AddEditTaskActivity extends AppCompatActivity {
             mButton.setText(R.string.update_button);
             if (mTaskId == DEFAULT_TASK_ID) {
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-                final LiveData<TaskEntry> task = AppDatabase.getInstance(getApplicationContext()).taskDao().loadTaskById(mTaskId);
-                task.observe(this, new Observer<TaskEntry>() {
+
+                AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(),mTaskId);
+                final AddEditTaskViewModel viewModel = ViewModelProviders.of(this,factory).get(AddEditTaskViewModel.class);
+
+
+                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
                             @Override
                             public void onChanged(TaskEntry taskEntry) {
                                 Log.d(TAG,"Receving Database Update");
-                                task.removeObserver(this);
+                                viewModel.getTask().removeObserver(this);
                                 populateUI(taskEntry);
 
                             }
@@ -66,6 +73,43 @@ public class AddEditTaskActivity extends AppCompatActivity {
                         // populate the UI
             }
         }
+//
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_add_edit_task);
+//
+//
+//
+//        initViews();
+//
+//        if (savedInstanceState != null && savedInstanceState.containsKey(INSTANCE_TASK_ID)) {
+//            mTaskId = savedInstanceState.getInt(INSTANCE_TASK_ID, DEFAULT_TASK_ID);
+//        }
+//
+//        Intent intent = getIntent();
+//
+//        if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
+//            mButton.setText(R.string.update_button);
+//
+//            if (mTaskId == DEFAULT_TASK_ID) {
+//                // populate the UI
+//
+//                mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
+//                AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
+//                viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
+//
+//                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
+//                    @Override
+//                    public void onChanged(TaskEntry taskEntry) {
+//                        viewModel.getTask().removeObserver(this);
+//                        populateUI(taskEntry);
+//                    }
+//                });
+//
+//            }
+//        }else{
+//            AddEditTaskViewModelFactoy factory = new AddEditTaskViewModelFactoy(getApplication(), mTaskId);
+//            viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
+//        }
     }
 
     @Override
@@ -96,13 +140,19 @@ public class AddEditTaskActivity extends AppCompatActivity {
      * @param task the taskEntry to populate the UI
      */
     private void populateUI(TaskEntry task) {
+//        if(task == null){
+//
+//            return;
+//        }else;{
+//            mEditText.setText(task.getDescription());
+//            setPriorityInViews(task.getPriority());
+//        }
         if(task == null){
-
             return;
-        }else;{
-            mEditText.setText(task.getDescription());
-            setPriorityInViews(task.getPriority());
         }
+        mEditText.setText(task.getDescription());
+        setPriorityInViews(task.getPriority());
+
     }
     /**
      * onSaveButtonClicked is called when the "save" button is clicked.

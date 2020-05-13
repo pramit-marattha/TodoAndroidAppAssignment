@@ -18,6 +18,7 @@ public class MainViewModel extends AndroidViewModel {
 private final static String TAG = MainViewModel.class.getSimpleName();
 
 private LiveData<List<TaskEntry>> tasks;
+AppDatabase database;
 
 public MainViewModel(@NonNull Application application) {
         super(application);
@@ -28,4 +29,20 @@ public MainViewModel(@NonNull Application application) {
 public LiveData<List<TaskEntry>> getTasks(){
         return tasks;
         }
+
+
+        public void deleteTask(final TaskEntry task){
+
+                AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+                        @Override
+                        public void run() {
+
+                                database.taskDao().deleteTask(task);
+
+
+                        }
+                });
+
+        }
+
         }

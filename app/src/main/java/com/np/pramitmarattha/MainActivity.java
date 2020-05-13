@@ -22,7 +22,10 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
     // Member variables for the adapter and RecyclerView
     private RecyclerView mRecyclerView;
     private TaskAdapter mAdapter;
-    AppDatabase database;
+
+    MainViewModel viewModel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,17 +51,11 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             @Override
             public void onSwiped(final RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 // Here is where you'll implement swipe to delete
-
-                AppDatabase.databaseWriteExecutor.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        int position = viewHolder.getAdapterPosition();
-                        TaskEntry task = mAdapter.getTasks().get(position);
-                        database.taskDao().deleteTask(task);
+                int position = viewHolder.getAdapterPosition();
+                TaskEntry task = mAdapter.getTasks().get(position);
+                viewModel.deleteTask(task);
 
 
-                    }
-                });
             }
 
         }).attachToRecyclerView(mRecyclerView);
@@ -73,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             }
         });
 
-        database = AppDatabase.getInstance(getApplicationContext());
 
         ViewModelSetUp();
     }
@@ -94,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
     }
 
     private void ViewModelSetUp() {
-       MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         viewModel.getTasks().observe(this, new Observer<List<TaskEntry>>() {
             @Override
             public void onChanged(List<TaskEntry> taskEntries) {
