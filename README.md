@@ -1,8 +1,10 @@
+![Underconstruction](https://static.vecteezy.com/system/resources/previews/000/265/967/non_2x/under-construction-design-website-development-design-illustration-vector.jpg)
+
 ![TodoApp](https://i.ibb.co/SQKHL27/todo.png)
 
 ---
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)
-[![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+[![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)][![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 ---
 
 # Development Stages
@@ -23,10 +25,11 @@
 │   ├── AddEditTaskActivityViewModel Branch
 │   ├── Repository Branch
 │   ├── UserInterface Branch
-│   ├── ...
-│   ├── ...
-│   ├── ...
+│   ├── Updating The Icons Branch
+│   ├── Updating the Task branch
+│   ├── Undo Feature Branch
 │   ├── ....
+│   ├── ...
 │   ├── ...
 │   └── ....
 ├── Final Phase(Apk Export)
