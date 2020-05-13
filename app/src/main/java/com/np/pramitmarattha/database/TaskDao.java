@@ -1,5 +1,6 @@
 package com.np.pramitmarattha.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -13,7 +14,7 @@ import java.util.List;
 public interface TaskDao {
 
     @Query("select * from task order by priority")
-    List<TaskEntry> loadAllTasks();
+    LiveData<List<TaskEntry>> loadAllTasks();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTask(TaskEntry task);
@@ -25,7 +26,7 @@ public interface TaskDao {
     void deleteTask(TaskEntry task);
 
     @Query("Select * from task where id =:id")
-    TaskEntry loadTaskById(int id);
+    LiveData<TaskEntry> loadTaskById(int id);
 
 
 }

@@ -1,7 +1,11 @@
 package com.np.pramitmarattha;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +15,7 @@ import com.np.pramitmarattha.database.DateConverter;
 import com.np.pramitmarattha.database.TaskEntry;
 
 import java.util.Date;
+import java.util.Observable;
 
 public class AddEditTaskActivity extends AppCompatActivity {
 
@@ -48,21 +53,17 @@ public class AddEditTaskActivity extends AppCompatActivity {
             mButton.setText(R.string.update_button);
             if (mTaskId == DEFAULT_TASK_ID) {
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-                AppDatabase.databaseWriteExecutor.execute(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        final TaskEntry task = AppDatabase.getInstance(getApplicationContext()).taskDao().loadTaskById(mTaskId);
-                        runOnUiThread(new Runnable() {
+                final LiveData<TaskEntry> task = AppDatabase.getInstance(getApplicationContext()).taskDao().loadTaskById(mTaskId);
+                task.observe(this, new Observer<TaskEntry>() {
                             @Override
-                            public void run() {
-                                populateUI(task);
+                            public void onChanged(TaskEntry taskEntry) {
+                                Log.d(TAG,"Receving Database Update");
+                                task.removeObserver(this);
+                                populateUI(taskEntry);
+
                             }
                         });
-                    }
-
-                });
-                // populate the UI
+                        // populate the UI
             }
         }
     }
