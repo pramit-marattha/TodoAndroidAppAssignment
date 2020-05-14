@@ -50,15 +50,17 @@
 
 # Full Stacked TODO app.
 
-> .............................
+> Fully functional ToDo app
 
-> .............................
+> Task can be categorized
 
-> .............................
+> Multiple Todo task can be added at the same time
 
-> .............................
+> Snackbar popup feature whenever tasks gets deleted
 
-> .............................
+> Tasks can be updated
+
+> 
 
 ---
 
@@ -126,9 +128,9 @@ you can display all this interesting data to the user.Whenever the data changes,
 
 
 
-## FAQ
+# FAQ
 
 - **How do I do install this app?**
-    - App is under development..
+    - App is under development....................
 
 ---
