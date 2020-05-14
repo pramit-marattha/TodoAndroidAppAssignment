@@ -64,7 +64,7 @@
 
 ## Features
 <p align="center">
-  <img src = "http://g.recordit.co/HX0ySasFpN.gif">
+  <img src = "http://g.recordit.co/16FpSh626C.gif">
   </p>
 
 ---
