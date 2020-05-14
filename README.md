@@ -75,7 +75,11 @@
   
 ---
 
-## Usage 
+## Downloads:
+
+| Platform | Architecture    | Version | Link                                                                                                                         |
+| -------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Android  | x64     | under construction   | [Download]()  |
 
 ---
 ## Documentation (Model–view–viewmodel architecture in a nutshell) 
