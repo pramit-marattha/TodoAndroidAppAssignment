@@ -9,6 +9,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -16,6 +17,11 @@ public class MainViewModel extends AndroidViewModel {
 
         private  LiveData<List<TaskEntry>> tasks;
 
+        private MutableLiveData<Boolean> _showSnackBarEvent = new MutableLiveData<>();
+
+        public LiveData<Boolean> showSnackBarEvent(){
+                return _showSnackBarEvent;
+        }
 
 
         public  MainViewModel(Application application){
@@ -31,6 +37,8 @@ public class MainViewModel extends AndroidViewModel {
 
         public void deleteTask(TaskEntry task){
                 repository.deleteTask(task);
+
+                _showSnackBarEvent.setValue(true);
         }
 
 }

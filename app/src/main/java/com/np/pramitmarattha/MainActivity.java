@@ -1,7 +1,5 @@
 package com.np.pramitmarattha;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -14,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.TaskEntry;
 import java.util.List;
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
          Attach an OnClickListener to it, so that when it's clicked, a new intent will be created
          to launch the AddTaskActivity.
          */
-        FloatingActionButton fabButton = findViewById(R.id.fab);
+        final FloatingActionButton fabButton = findViewById(R.id.fab);
 
         fabButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +94,20 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
                 mAdapter.setTasks(taskEntries);
             }
         });
+
+
+        viewModel.showSnackBarEvent().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean showSnackBar) {
+                if(showSnackBar == true){
+                    Snackbar.make(fabButton,"Your Task Has been Deleted",Snackbar.LENGTH_LONG).show();
+                }
+            }
+        });
     }
+
+
+
 
     @Override
     public void onItemClickListener(int itemId) {
