@@ -1,21 +1,27 @@
 package com.np.pramitmarattha;
 
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.DateConverter;
 import com.np.pramitmarattha.database.TaskEntry;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Observable;
 
 
@@ -82,11 +88,13 @@ public class AddEditTaskActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt(INSTANCE_TASK_ID, mTaskId);
         super.onSaveInstanceState(outState);
     }
+
 
     /**
      * initViews is called from onCreate to init the member variable views
@@ -175,4 +183,36 @@ public class AddEditTaskActivity extends AppCompatActivity {
                 ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton3);
         }
     }
+
+
+
+    //Speech
+    public void getSpeechInput(View view) {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        if (intent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(intent,10);
+        } else {
+            Toast.makeText(this,"Yo yo its not supported",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 10:
+                if (resultCode==RESULT_OK && data != null){
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    mEditText.setText(result.get(0));
+                }
+                break;
+        }
+    }
+
+
+
+
 }

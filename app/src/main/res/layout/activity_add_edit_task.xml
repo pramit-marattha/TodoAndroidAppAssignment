@@ -2,6 +2,7 @@
    <!-- This vertical linear layout contains all the views in the AddTaskActivity code.
     This includes an EditText to adtaskEntrytask description, and buttons to select a priority
     -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,6 +38,8 @@
         android:text="@string/priority_string"
         android:textColor="@android:color/primary_text_light" />
 
+
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -66,6 +69,8 @@
             android:text="@string/med_priority"
             android:theme="@style/WhiteRadioButton" />
 
+
+
         <RadioButton
             android:id="@+id/radButton3"
             android:layout_width="3dp"
@@ -78,9 +83,17 @@
 
     </RadioGroup>
 
-    <!-- Add button -->
-    <Button
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="76dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="-90dp"
+        android:background="@drawable/mic"
+        android:onClick="getSpeechInput" />
 
+    <!-- Add button -->
+
+    <Button
         android:id="@+id/saveButton"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="177dp"
