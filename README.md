@@ -69,10 +69,10 @@
 
 ## Features
 <p align="center">
-  <img src = "http://g.recordit.co/984jX2BaeK.gif" width="320" height="576">
-  <img src = "http://g.recordit.co/C7LenNdrsY.gif" width="320" height="576">
-  <img src = "http://g.recordit.co/16FpSh626C.gif" width="320" height="576">
-  <img src = "http://g.recordit.co/1N5aHQblP6.gif" width="320" height="576">
+  <img src = "http://g.recordit.co/984jX2BaeK.gif" width="200" height="360">
+  <img src = "http://g.recordit.co/C7LenNdrsY.gif" width="200" height="360">
+  <img src = "http://g.recordit.co/16FpSh626C.gif" width="200" height="360">
+  <img src = "http://g.recordit.co/1N5aHQblP6.gif" width="200" height="360">
   </p>
   
 ---
