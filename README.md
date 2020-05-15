@@ -18,7 +18,10 @@
 # Development Stages
 ```bash
 ├── Master
-│   ├── InitialStep
+│\
+│ \
+│  \
+|   |─ InitialStep Branch
 │   ├── Entity Branch
 │   ├── DataAccessObject branch
 │   ├── Database Branch
@@ -41,7 +44,11 @@
 │   ├── ...
 │   ├── ...
 │   ├── ...
-│   └── ....
+│   ├── ...
+│   /
+│  /
+| /
+|/
 ├── Final Phase(Apk Export)
 ```
 <p align="center">
