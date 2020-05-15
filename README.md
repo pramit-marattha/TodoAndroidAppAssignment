@@ -69,9 +69,9 @@
 
 ## Features
 <p align="center">
-  <img src = "http://g.recordit.co/C7LenNdrsY.gif">
-  <img src = "http://g.recordit.co/16FpSh626C.gif">
-  <img src = "http://g.recordit.co/1N5aHQblP6.gif">
+  <img src = "http://g.recordit.co/C7LenNdrsY.gif" width="250" height="445">
+  <img src = "http://g.recordit.co/16FpSh626C.gif" width="250" height="445">
+  <img src = "http://g.recordit.co/1N5aHQblP6.gif" width="250" height="445">
   </p>
   
 ---
