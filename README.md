@@ -69,6 +69,7 @@
 
 ## Features
 <p align="center">
+  <img src = "http://g.recordit.co/C7LenNdrsY.gif">
   <img src = "http://g.recordit.co/16FpSh626C.gif">
   <img src = "http://g.recordit.co/1N5aHQblP6.gif">
   </p>
