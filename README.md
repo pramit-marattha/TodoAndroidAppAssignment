@@ -30,7 +30,6 @@
 │   ├── PopulateList Branch
 │   ├── DeleteList Branch
 │   ├── UpdateList branch
-│   ├── favicon.ico
 │   ├── Live Data Branch
 │   ├── MainActivityViewModel Branch
 │   ├── AddEditTaskActivityViewModel Branch
