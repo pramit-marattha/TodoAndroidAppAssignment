@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         });
     }
 
-    
+
 
     @Override
     public void onItemClickListener(int itemId) {
