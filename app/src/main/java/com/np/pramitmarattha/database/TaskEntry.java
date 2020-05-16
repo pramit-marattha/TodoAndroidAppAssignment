@@ -6,29 +6,33 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-
-@Entity(tableName = "task")
-public class TaskEntry {
+@Entity(tableName = "tasks")
+public  class TaskEntry {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String description;
+    private String taskDate;
     private int priority;
-    @ColumnInfo(name="updated_at")
+    @ColumnInfo(name = "updated_at")
     private Date updatedAt;
 
-    @Ignore
-    public TaskEntry(String description, int priority, Date updatedAt) {
-        this.description = description;
-        this.priority = priority;
-        this.updatedAt = updatedAt;
-    }
-    public TaskEntry(int id, String description, int priority, Date updatedAt) {
+    public TaskEntry(int id, String description, String taskDate, int priority, Date updatedAt) {
         this.id = id;
         this.description = description;
+        this.taskDate = taskDate;
         this.priority = priority;
         this.updatedAt = updatedAt;
     }
+
+    @Ignore
+    public TaskEntry(String description, String  taskDate, int priority, Date updatedAt) {
+        this.description = description;
+        this.taskDate = taskDate;
+        this.priority = priority;
+        this.updatedAt = updatedAt;
+    }
+
     public int getId() {
         return id;
     }
@@ -43,6 +47,14 @@ public class TaskEntry {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTaskDate() {
+        return taskDate;
+    }
+
+    public void setTaskDate(String taskDate) {
+        this.taskDate = taskDate;
     }
 
     public int getPriority() {

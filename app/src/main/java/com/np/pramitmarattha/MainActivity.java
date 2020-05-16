@@ -1,5 +1,6 @@
 package com.np.pramitmarattha;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -7,16 +8,20 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.TaskEntry;
+import java.util.Calendar;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemClickListener {
 
@@ -25,19 +30,16 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
     // Member variables for the adapter and RecyclerView
     private RecyclerView mRecyclerView;
     private TaskAdapter mAdapter;
-
-
-    MainViewModel viewModel;
-
+    MainViewModel mViewModel;
+    private TextView notodos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-
         // Set the RecyclerView to its corresponding view
         mRecyclerView = findViewById(R.id.recyclerViewTasks);
+        notodos = findViewById(R.id.textView2);
 
         // Set the layout for the RecyclerView to be a linear layout, which measures and
         // positions items within a RecyclerView into a linear list
@@ -63,22 +65,32 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
 
             // Called when a user swipes left or right on a ViewHolder
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 // Here is where you'll implement swipe to delete
 
                 int position = viewHolder.getAdapterPosition();
                 List<TaskEntry> todoList = mAdapter.getTasks();
-                viewModel.deleteTask(todoList.get(position));
+                mViewModel.delete(todoList.get(position));
             }
         }).attachToRecyclerView(mRecyclerView);
 
         /*
-         Set the Floating Action Button (FAB) to its corresponding View.
-         Attach an OnClickListener to it, so that when it's clicked, a new intent will be created
+         Setting the Floating Action Button (FAB) to its corresponding View.
+         Attaching an OnClickListener to it, so that when it's clicked, a new intent will be created
          to launch the AddTaskActivity.
          */
-        final FloatingActionButton fabButton = findViewById(R.id.fab);
+        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mViewModel.getCustomTasks().observe(this, new Observer<List<TaskEntry>>() {
+            @Override
+            public void onChanged(@Nullable List<TaskEntry> tasks)
+            {
+                if (tasks.toString()=="[]"){ notodos.setText(""); }
+                else { notodos.setText(""); }
+                mAdapter.setTodoList(tasks);
 
+            }
+        });
+        final FloatingActionButton fabButton = findViewById(R.id.fab);
         fabButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,26 +99,18 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
                 startActivity(addTaskIntent);
             }
         });
-
-        viewModel.getTasks().observe(this, new Observer<List<TaskEntry>>() {
-            @Override
-            public void onChanged(List<TaskEntry> taskEntries) {
-                mAdapter.setTasks(taskEntries);
-            }
-        });
-
-
-        viewModel.showSnackBarEvent().observe(this, new Observer<Boolean>() {
+        mViewModel.showSnackBarEvent().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean showSnackBar) {
                 if(showSnackBar == true){
-                    Snackbar.make(fabButton,"Your Task Has been Deleted",Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(fabButton,"Your Task Has been Deleted !!",Snackbar.LENGTH_LONG).show();
                 }
             }
         });
     }
-
-
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     public void onItemClickListener(int itemId) {
@@ -115,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         intent.putExtra(AddEditTaskActivity.EXTRA_TASK_ID, itemId);
         startActivity(intent);
     }
+
+
+
 }
-
-

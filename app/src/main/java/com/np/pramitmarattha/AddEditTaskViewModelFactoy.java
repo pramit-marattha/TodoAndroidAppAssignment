@@ -2,23 +2,24 @@ package com.np.pramitmarattha;
 
 import android.app.Application;
 
+import com.np.pramitmarattha.database.AppDatabase;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 public class AddEditTaskViewModelFactoy extends ViewModelProvider.NewInstanceFactory {
+    private final AppDatabase ApplicationDataBase;
+    private final int CustomTaskId;
 
-    Application application;
-    int taskId;
-
-    public AddEditTaskViewModelFactoy(Application application, int taskId){
-        this.application = application;
-        this.taskId = taskId;
+    public AddEditTaskViewModelFactoy(AppDatabase mdb, int mTodoId) {
+        this.ApplicationDataBase = mdb;
+        this.CustomTaskId = mTodoId;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return  (T) new AddEditTaskViewModel(application, taskId);
+        return (T) new AddEditTaskViewModel(ApplicationDataBase, CustomTaskId);
     }
 }

@@ -13,9 +13,8 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MainViewModel extends AndroidViewModel {
 
-        Repository repository;
-
-        private  LiveData<List<TaskEntry>> tasks;
+        private LiveData<List<TaskEntry>> CustTasks;
+        Repository CustRepository;
 
         private MutableLiveData<Boolean> _showSnackBarEvent = new MutableLiveData<>();
 
@@ -23,22 +22,18 @@ public class MainViewModel extends AndroidViewModel {
                 return _showSnackBarEvent;
         }
 
-
-        public  MainViewModel(Application application){
+        public MainViewModel(@NonNull Application application) {
                 super(application);
-                AppDatabase database = AppDatabase.getInstance(application);
-                repository = new Repository(database);
-                tasks = repository.getTasks();
+                CustRepository = new Repository(application);
+                CustTasks = CustRepository.getAllWords();
         }
 
-        public LiveData<List<TaskEntry>> getTasks(){
-                return tasks;
+        public LiveData<List<TaskEntry>> getCustomTasks(){
+                return CustTasks;
         }
-
-        public void deleteTask(TaskEntry task){
-                repository.deleteTask(task);
-
+        public void insert(TaskEntry taskEntry) { CustRepository.insert(taskEntry); }
+        public void delete(TaskEntry taskEntry) { CustRepository.delete(taskEntry);
                 _showSnackBarEvent.setValue(true);
         }
-
+        public void update(TaskEntry taskEntry) { CustRepository.update(taskEntry); }
 }

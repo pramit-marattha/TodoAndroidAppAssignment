@@ -1,5 +1,7 @@
 package com.np.pramitmarattha;
 
+import android.app.Application;
+
 import com.np.pramitmarattha.database.AppDatabase;
 import com.np.pramitmarattha.database.TaskDao;
 import com.np.pramitmarattha.database.TaskEntry;
@@ -9,44 +11,44 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 public class Repository {
+    private TaskDao taskDao;
+    private LiveData<List<TaskEntry>> AllTheTasks;
 
-    TaskDao dao;
-    public Repository(AppDatabase database){
-        dao = database.taskDao();
+    Repository(Application application) {
+        AppDatabase db = AppDatabase.getInstance(application);
+        taskDao = db.taskDao();
+        AllTheTasks = taskDao.getAllTasks();
     }
 
-    public LiveData<List<TaskEntry>> getTasks(){
-        return dao.loadAllTasks();
+    LiveData<List<TaskEntry>> getAllWords() {
+        return AllTheTasks;
     }
 
-    public LiveData<TaskEntry> getTaskById(int taskId){
-        return dao.loadTaskById(taskId);
-    }
-
-    public void updateTask(final TaskEntry task){
-        AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+    public void insert (final TaskEntry taskEntry) {
+        RunnableExecutors.getInstance().DiskThread().execute(new Runnable() {
             @Override
             public void run() {
-                dao.update(task);
+                taskDao.insertTodo(taskEntry);
             }
         });
     }
 
-    public void deleteTask(final TaskEntry task){
-        AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+    public void delete(final TaskEntry taskEntry)  {
+        RunnableExecutors.getInstance().DiskThread().execute(new Runnable() {
             @Override
             public void run() {
-                dao.deleteTask(task);
+                taskDao.deleteTodo(taskEntry);
             }
         });
     }
 
-    public  void  insertTask(final TaskEntry task){
-        AppDatabase.databaseWriteExecutor.execute(new Runnable() {
+    public void update(final TaskEntry taskEntry)  {
+        RunnableExecutors.getInstance().DiskThread().execute(new Runnable() {
             @Override
             public void run() {
-                dao.insertTask(task);
+                taskDao.update(taskEntry);
             }
         });
     }
+
 }
