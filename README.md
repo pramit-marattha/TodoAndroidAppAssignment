@@ -18,40 +18,36 @@
 # Development Stages
 ```bash
 ├── Master
-│\
-│ \
-│  \
-|   |─ InitialStep Branch
-│   ├── Entity Branch
-│   ├── DataAccessObject branch
-│   ├── Database Branch
-│   ├── TypeConverter Branch
-│   ├── Thread runnable & executor Branch 
-│   ├── PopulateList Branch
-│   ├── DeleteList Branch
-│   ├── UpdateList branch
-│   ├── Live Data Branch
-│   ├── MainActivityViewModel Branch
-│   ├── AddEditTaskActivityViewModel Branch
-│   ├── Repository Branch
-│   ├── UserInterface Branch
-│   ├── Updating The Icons Branch
-│   ├── Updating the Task branch
-│   ├── Undo Feature Branch
-│   ├── SnackBarPopUPFeature after delete Branch
-│   ├── New AppIcon Branch
-│   ├── ...
-│   ├── ...
-│   ├── ...
-│   ├── ...
-│   /
-│  /
-| /
-|/
+|
+|---->|─ InitialStep Branch
+│     ├── Entity Branch
+│     ├── DataAccessObject branch
+│     ├── Database Branch
+│     ├── TypeConverter Branch
+│     ├── Thread runnable & executor Branch 
+│     ├── PopulateList Branch
+│     ├── DeleteList Branch
+│     ├── UpdateList branch
+│     ├── Live Data Branch
+│     ├── MainActivityViewModel Branch
+│     ├── AddEditTaskActivityViewModel Branch
+│     ├── Repository Branch
+│     ├── UserInterface Branch
+│     ├── Updating The Icons Branch
+│     ├── Updating the Task branch
+│     ├── Undo Feature Branch
+│     ├── SnackBarPopUPFeature after delete Branch
+│     ├── New AppIcon Branch
+│     ├── CustomDate Feature Brach
+│     ├── SpeechToText Branch
+│     ├── ...
+│     ├── ...
+│<----├── ...
+│   
 ├── Final Phase(Apk Export)
 ```
 <p align="center">
-<img src="https://user-images.githubusercontent.com/37651620/81959035-9cb52280-962e-11ea-8577-95540687bea6.png" alt="" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/37651620/82111751-fc164e00-9766-11ea-9dff-8747f423750c.png" alt="" width="700" height="700">
 </p>
 
 
