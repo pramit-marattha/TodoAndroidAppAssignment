@@ -88,7 +88,7 @@
 
 
 
-# Documentation of each process
+# Detailed Documented process of each Branch
 InitialPhase Branch                                |  Entity Branch
 :-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/oz8cX3el2G.gif)           |  ![](http://g.recordit.co/JQvMR5cJbj.gif)
