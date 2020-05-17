@@ -86,9 +86,81 @@
 
 ---
 
-# Documentation
+
+
+# Documentation of each process
+## InitialPhase Branch
+<p align="left">
+ <img src = "http://g.recordit.co/oz8cX3el2G.gif" width="700" height="342">
+</p>
+
 ## Organizing files by creating Packages
-![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif)
+<p align="left">
+ <img src = "https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif" width="700" height="342">
+</p>
+
+---
+# Under Construction 
+## Entity Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Dao branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Database Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## TypeConverter Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## ThreadRunnable Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Populating List Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Deleting List Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Live Data
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## MainActivity ViewModel 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## AddEditTaskActivity ViewModel 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Repoditory Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
+## Snackbar Branch 
+<p align="left">
+ <img src = "" width="700" height="342">
+</p>
+
 
 
 ## Documentation (Model–view–viewmodel architecture in a nutshell) 
