@@ -91,36 +91,37 @@
 # Documentation of each process
 InitialPhase Branch                                |  Entity Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/oz8cX3el2G.gif)  |  ![](http://g.recordit.co/JQvMR5cJbj.gif)
+![](http://g.recordit.co/oz8cX3el2G.gif)           |  ![](http://g.recordit.co/JQvMR5cJbj.gif)
 
 DataAcessObject Branch                             |  Database Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/pjNmkW9T0q.gif)  |  ![](http://g.recordit.co/HD0k1JbdKd.gif)
+![](http://g.recordit.co/pjNmkW9T0q.gif)           |  ![](http://g.recordit.co/HD0k1JbdKd.gif)
 
 TypeConverter Branch                               |  ThreadRunnableExectors Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/5IAQC2JeJr.gif)  |  ![](http://g.recordit.co/21sIloC9N2.gif)
+![](http://g.recordit.co/5IAQC2JeJr.gif)           |  ![](http://g.recordit.co/21sIloC9N2.gif)
 
 
-PopulatingList Branch                              |  DeletingList Branch
+PopulatingList Branch                              |  DeletingTask Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/4hB24sPSYN.gif)  |  ![](http://g.recordit.co/rB7EjD5n7x.gif)
+![](http://g.recordit.co/4hB24sPSYN.gif)           |  ![](https://user-images.githubusercontent.com/37651620/82155625-fb300a00-9895-11ea-891c-6aac9f21f03e.gif)
 
 UpdatingTask Branch                                |  LiveData Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/pQWkvj4WUn.gif)  |  ![](http://g.recordit.co/LqSU525J4J.gif)
+![](https://user-images.githubusercontent.com/37651620/82155701-8f9a6c80-9896-11ea-8c1e-a0c8454cc8d8.gif)           |  ![](http://g.recordit.co/LqSU525J4J.gif)
 
 MainActivityViewModel Branch                       | AddEditTaskActivityViewModel Branch  
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/5uFITAtrx8.gif)  |  ![](http://g.recordit.co/7bJrMYSE7Q.gif)
+![](https://user-images.githubusercontent.com/37651620/82155735-bfe20b00-9896-11ea-82eb-c62bda5bf779.gif)           |  ![](https://user-images.githubusercontent.com/37651620/82155763-e0aa6080-9896-11ea-8939-2996e3f3dec9.gif)
 
 Repository Branch                                  |  DeletePopUp Branch 
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/Fc1snCHxWP.gif)  |  ![](http://g.recordit.co/idA7vDJzaI.gif)
+![](https://user-images.githubusercontent.com/37651620/82156059-c1acce00-9898-11ea-8be8-55d18a64fc93.gif)           |  ![](http://g.recordit.co/idA7vDJzaI.gif)
 
 SppechToText Branch                                | CustomDate Branch
 :-------------------------------------------------:|:-------------------------------------------------:
-![](http://g.recordit.co/XK8laCyYBo.gif)  |  ![](http://g.recordit.co/9Wte9nXKLN.gif)
+![XK8laCyYBo](https://user-images.githubusercontent.com/37651620/82156096-e1dc8d00-9898-11ea-85de-2bdef7f144b0.gif)         |  ![9Wte9nXKLN](https://user-images.githubusercontent.com/37651620/82156420-ae9afd80-989a-11ea-88f8-c15c399b1722.gif)
+
 
 OraganizingFilesByPackage Branch      
 :-------------------------------------------------:|
