@@ -68,7 +68,6 @@
 ---
 
 
-
 ## Features
 <p align="center">
   <img src = "http://g.recordit.co/V65MnXn2nA.gif" width="200" height="360">
@@ -86,6 +85,12 @@
 | Android  | x64     | under construction   | [Download]()  |
 
 ---
+
+# Documentation
+## Organizing files by creating Packages
+![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif)
+
+
 ## Documentation (Model–view–viewmodel architecture in a nutshell) 
 Model–view–viewmodel (MVVM) is a software architectural pattern that facilitates the separation of the development of the graphical user interface (the view) be it via a markup language or GUI code from the development of the business logic or back-end logic (the model) so that the view is not dependent on any specific model platform. The view model of MVVM is a value converter,meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented. In this respect, the view model is more model than view, and handles most if not all of the view's display logic.The view model may implement a mediator pattern, organizing access to the back-end logic around the set of use cases supported by the view.
 #
