@@ -89,40 +89,41 @@
 
 
 # Documentation of each process
-InitialPhase Branch             |  Entity Branch
-:-------------------------:|:-------------------------:
+InitialPhase Branch                                |  Entity Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/oz8cX3el2G.gif)  |  ![](http://g.recordit.co/JQvMR5cJbj.gif)
 
-DataAcessObject Branch            |  Database Branch
-:-------------------------:|:-------------------------:
+DataAcessObject Branch                             |  Database Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/pjNmkW9T0q.gif)  |  ![](http://g.recordit.co/HD0k1JbdKd.gif)
 
-TypeConverter Branch           |  ThreadRunnableExectors Branch
-:-------------------------:|:-------------------------:
+TypeConverter Branch                               |  ThreadRunnableExectors Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/5IAQC2JeJr.gif)  |  ![](http://g.recordit.co/21sIloC9N2.gif)
 
-PopulatingList Branch            |  DeletingList Branch
-:-------------------------:|:-------------------------:
+
+PopulatingList Branch                              |  DeletingList Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/4hB24sPSYN.gif)  |  ![](http://g.recordit.co/rB7EjD5n7x.gif)
 
-UpdatingTask Branch             |  LiveData Branch
-:-------------------------:|:-------------------------:
+UpdatingTask Branch                                |  LiveData Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/pQWkvj4WUn.gif)  |  ![](http://g.recordit.co/LqSU525J4J.gif)
 
-MainActivityViewModel Branch             | AddEditTaskActivityViewModel Branch  
-:-------------------------:|:-------------------------:
+MainActivityViewModel Branch                       | AddEditTaskActivityViewModel Branch  
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/5uFITAtrx8.gif)  |  ![](http://g.recordit.co/7bJrMYSE7Q.gif)
 
-Repository Branch        |  DeletePopUp Branch 
-:-------------------------:|:-------------------------:
+Repository Branch                                  |  DeletePopUp Branch 
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/Fc1snCHxWP.gif)  |  ![](http://g.recordit.co/idA7vDJzaI.gif)
 
-SppechToText Branch         | CustomDate Branch
-:-------------------------:|:-------------------------:
+SppechToText Branch                                | CustomDate Branch
+:-------------------------------------------------:|:-------------------------------------------------:
 ![](http://g.recordit.co/XK8laCyYBo.gif)  |  ![](http://g.recordit.co/9Wte9nXKLN.gif)
 
 OraganizingFilesByPackage Branch      
-:-------------------------:|
+:-------------------------------------------------:|
 ![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |
 
 
