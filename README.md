@@ -89,77 +89,44 @@
 
 
 # Documentation of each process
-## InitialPhase Branch
-<p align="left">
- <img src = "http://g.recordit.co/oz8cX3el2G.gif" width="550" height="268">
-</p>
+InitialPhase Branch             |  Entity Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/oz8cX3el2G.gif)  |  ![](http://g.recordit.co/JQvMR5cJbj.gif)
 
----
-# Under Construction 
-## Entity Branch 
-<p align="left">
- <img src = "http://g.recordit.co/JQvMR5cJbj.gif"  width="550" height="268">
-</p>
+DataAcessObject Branch            |  Database Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/pjNmkW9T0q.gif)  |  ![](http://g.recordit.co/HD0k1JbdKd.gif)
 
-## Dao branch 
-<p align="left">
- <img src = "http://g.recordit.co/pjNmkW9T0q.gif"  width="550" height="268">
-</p>
+TypeConverter Branch           |  ThreadRunnableExectors Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/5IAQC2JeJr.gif)  |  ![](http://g.recordit.co/21sIloC9N2.gif)
 
-## Database Branch 
-<p align="left">
- <img src = "http://g.recordit.co/HD0k1JbdKd.gif"  width="550" height="268">
-</p>
+PopulatingList Branch            |  DeletingList Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/4hB24sPSYN.gif)  |  ![](http://g.recordit.co/rB7EjD5n7x.gif)
 
-## TypeConverter Branch 
-<p align="left">
- <img src = "http://g.recordit.co/5IAQC2JeJr.gif" width="550" height="268">
-</p>
+UpdatingTask Branch             |  LiveData Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/pQWkvj4WUn.gif)  |  ![](http://g.recordit.co/LqSU525J4J.gif)
 
-## ThreadRunnableExecutors Branch 
-<p align="left">
- <img src = "http://g.recordit.co/21sIloC9N2.gif" width="550" height="268">
-</p>
+MainActivityViewModel Branch             | AddEditTaskActivityViewModel Branch  
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/5uFITAtrx8.gif)  |  ![](http://g.recordit.co/7bJrMYSE7Q.gif)
 
-## Populating List Branch 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
+Repository Branch        |  DeletePopUp Branch 
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/Fc1snCHxWP.gif)  |  ![](http://g.recordit.co/idA7vDJzaI.gif)
 
-## Deleting List Branch 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
+SppechToText Branch         | CustomDate Branch
+:-------------------------:|:-------------------------:
+![](http://g.recordit.co/XK8laCyYBo.gif)  |  ![](http://g.recordit.co/9Wte9nXKLN.gif)
 
-## Live Data
-<p align="left">
- <img src = ""  width="550" height="268">
-</p>
+OraganizingFilesByPackage Branch      
+:-------------------------:|
+![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |
 
-## MainActivity ViewModel 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
 
-## AddEditTaskActivity ViewModel 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
 
-## Repoditory Branch 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
-
-## Snackbar Branch 
-<p align="left">
- <img src = "" width="550" height="268">
-</p>
-
-## Organizing files by creating Packages
-<p align="left">
- <img src = "https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif"  width="550" height="268">
-</p>
 
 
 
