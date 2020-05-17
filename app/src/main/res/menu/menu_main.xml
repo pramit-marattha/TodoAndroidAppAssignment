@@ -1,8 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.np.pramitmarattha.MainActivity">
-
+    tools:context="com.np.pramitmarattha.MainTasks.MainActivity">
     <item
         android:id="@+id/exp"
         android:orderInCategory="100"

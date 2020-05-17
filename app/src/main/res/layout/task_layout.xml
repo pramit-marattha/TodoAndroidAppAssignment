@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="8dp"
-    tools:context="com.np.pramitmarattha.MainActivity">
+    tools:context="com.np.pramitmarattha.MainTasks.MainActivity">
 
     <TextView
         android:id="@+id/priorityTextView"
@@ -25,6 +25,7 @@
         tools:text="1" />
 
     <LinearLayout
+        android:id="@+id/colorBackgg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
