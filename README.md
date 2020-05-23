@@ -43,6 +43,7 @@
 │     ├── ConvertActivityToFragment Branch    
 │     ├── Login/SignUp-toSaveTODO branch   <-------- Current progress
 │     ├── RefinedUserInterface Branch
+│     ├── NavigationComponent-viewPager Branch
 │<----├── WrappingInPackage-&-Apk-Export Branch
 │   
 ├── Final Phase(Apk Export)
