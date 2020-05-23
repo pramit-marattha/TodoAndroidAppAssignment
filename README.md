@@ -40,8 +40,8 @@
 │     ├── New AppIcon Branch
 │     ├── CustomDate Feature Brach
 │     ├── SpeechToText Branch
-│     ├── ActivityToFragment Branch    
-│     ├── Login/SignUp-toSaveTODO branch   <-------- Current Progress
+│     ├── ConvertActivityToFragment Branch    
+│     ├── Login/SignUp-toSaveTODO branch   <-------- Current progress
 │     ├── RefinedUserInterface Branch
 │<----├── WrappingInPackage-&-Apk-Export Branch
 │   
