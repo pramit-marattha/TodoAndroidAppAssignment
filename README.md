@@ -72,6 +72,8 @@
 
 ## Features
 <p align="center">
+  <img src = "http://g.recordit.co/FA4dI80KXq.gif" width="200" height="360">
+  <img src = "http://g.recordit.co/2BUesdd1wI.gif" width="200" height="360">
   <img src = "http://g.recordit.co/V65MnXn2nA.gif" width="200" height="360">
   <img src = "http://g.recordit.co/C7LenNdrsY.gif" width="200" height="360">
   <img src = "http://g.recordit.co/16FpSh626C.gif" width="200" height="360">
