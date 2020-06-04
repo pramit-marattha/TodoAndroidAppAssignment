@@ -1,9 +1,6 @@
-![Underconstruction](https://i.ibb.co/RYK2Gt8/UC.png)
-
----
 
 # TODO.
-
+---
 
 <p align="center">
   <img src="https://i.ibb.co/SQKHL27/todo.png">
@@ -41,46 +38,30 @@
 │     ├── CustomDate Feature Brach
 │     ├── SpeechToText Branch
 │     ├── ConvertActivityToFragment Branch    
-│     ├── Login/SignUp-toSaveTODO branch       <-------- Current progress
+│     ├── Login/SignUp-toSaveTODO branch       
 │     ├── RefinedUserInterface Branch
-│     ├── NavigationComponent-viewPager Branch
-│<----├── WrappingInPackage-&-Apk-Export Branch
+│     ├── NavigationComponent-viewPager Branch        
+│<----├── WrappingInPackage-&-Apk-Export Branch        <-------- Current progress
 │   
-├── Final Phase(Apk Export)
+├── Final Phase(Apk Export)                       
 ```
-<p align="center">
-<img src="https://user-images.githubusercontent.com/37651620/82111751-fc164e00-9766-11ea-9dff-8747f423750c.png" alt="" width="700" height="700">
-</p>
-
-
-# Full Stacked TODO app.
-
-> Fully functional ToDo app
-
-> Task can be categorized
-
-> Multiple Todo task can be added at the same time
-
-> Snackbar popup feature whenever tasks gets deleted
-
-> Tasks can be updated
-
-> 
 
 ---
 
 
 ## Features
-<p align="center">
-  <img src = "http://g.recordit.co/FA4dI80KXq.gif" width="200" height="360">
-  <img src = "http://g.recordit.co/2BUesdd1wI.gif" width="200" height="360">
-  <img src = "http://g.recordit.co/V65MnXn2nA.gif" width="200" height="360">
-  <img src = "http://g.recordit.co/C7LenNdrsY.gif" width="200" height="360">
-  <img src = "http://g.recordit.co/16FpSh626C.gif" width="200" height="360">
-  <img src = "http://g.recordit.co/1N5aHQblP6.gif" width="200" height="360">
-  </p>
-  
+Register          |  Sign-IN                      | Adding ToooDooo              |  Adding ToDo List
+:----------------------------:|:--------------------------------------:|:----------------------:|:-----------------
+<img src = "http://g.recordit.co/FA4dI80KXq.gif" width="200" height="360">  |  <img src = "http://g.recordit.co/2BUesdd1wI.gif" width="200" height="360">        |  <img src = "http://g.recordit.co/NWyseEnKvW.gif" width="200" height="360">  | <img src = "http://g.recordit.co/9BEfyIXARp.gif" width="200" height="360">
+#
+SpeechToText          |  Adding Name Description                   | Marking Complete/Incomplete              |  Undo Todo
+:----------------------------:|:--------------------------------------:|:----------------------:|:-----------------
+ <img src = "http://g.recordit.co/LSOThTsE2i.gif" width="200" height="360"> |   <img src = "http://g.recordit.co/eo7po84uIf.gif" width="200" height="360">        | <img src = "http://g.recordit.co/0VtmQQ2dEI.gif" width="200" height="360">   | <img src = "http://g.recordit.co/Tlhc9nYTSb.gif" width="200" height="360">
+
+
+
 ---
+
 
 ## Downloads:
 
@@ -89,6 +70,88 @@
 | Android  | x64     | under construction   | [Download]()  |
 
 ---
+### Design Architecture 
+# `MODEL`
+* `adapter`  consists of recyclerviews adapters.<br>
+-`TaskListsAdapter` <br>
+-`TaskItemsAdapter` <br>
+* `InterfacePrompt` consists of dialog prompts popup & Swipe to delete<br>
+-`AddNewTodoListDialog`<br>
+-`SwipeLeftDelete`<br>
+-`TodoItemsCallBack`<br>
+-`TodoListCallbacks`<br>
+-`SignoutDialog`<br>
+* `Database` consists of dao(class for room database) ,UserAuthentication,db..<br>
+-`DataAccessObject`<br>
+-`AppDatabase`<br>
+-`Dateconvert`<br>
+-`EntireUserDatabase`<br>
+-`RegisterUserAuthentication`<br>
+-`TodoItems`<br>
+-`TodoLists`<br>
+-`TodoListsAndItems`<br>
+
+# `VIEW`
+* `Activity`  consists of main activity<br>
+-`MainActivity` <br>
+* `Fragments` consists of all fragments<br>
+-`LoginFragments`<br>
+-`RegisterFragments`<br>
+-`SplashFragments`<br>
+-`TodoListFormFragments`<br>
+-`TodoListFragments`<br>
+
+# `ViewModel`
+* `authHandleHomeViewModel`  <br>
+* `ParentExtendHomeViewModel` <br>
+* `SignInViewModel` <br>
+* `SignInviewModel` <br>
+*  `SignUpViewModel` <br>
+*  `TodoListViewModel`<br>
+*  `TodoItemViewModel`<br>
+
+---
+# `References`
+### `Resources used to create this App`
+#### List of all modules , libraries & Repo-references to create this App:
+
+1. Room persistance library: [https://developer.android.com/topic/libraries/architecture/room]
+2. Paint class holds the style and color information about how to draw geometries, text and bitmaps.: [https://developer.android.com/reference/android/graphics/Paint]
+3. LayoutInflater: It Instantiates a layout XML file into its corresponding View objects[https://developer.android.com/reference/android/view/LayoutInflater]
+4. RxAndroid: Reactive Extensions for Android : [https://github.com/ReactiveX/RxAndroid]
+5. Appache commons hashcodebuilder: [https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html]
+6. Data Binding: It is a is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically. : [https://developer.android.com/topic/libraries/data-binding]
+7. Validation: [https://github.com/thyrlian/AwesomeValidation]
+8. Handling Lifecycles with Lifecycle-Aware Components: [https://developer.android.com/topic/libraries/architecture/lifecycle]
+9. Navigation Components: [https://developer.android.com/guide/navigation/navigation-getting-started]
+10. Material Components: [https://material.io/develop/android/docs/getting-started/]
+11. Material-components-android: [https://github.com/material-components/material-components-android]
+12. Referencing complex data using Room:[https://developer.android.com/training/data-storage/room/referencing-data]
+13. TypeConverter: [https://developer.android.com/reference/android/arch/persistence/room/TypeConverter]
+14. android.widget:[https://developer.android.com/reference/android/widget/package-summary]
+15. Uri :[https://developer.android.com/reference/android/net/Uri]
+16. Creating Task Room: [https://github.com/ebbi/TaskRoom]
+17. Creating Task Fragment:[https://github.com/ebbi/TaskFragment]
+18. TodoViewModel:[https://github.com/ebbi/TodoViewModel]
+19. Todo app Model View ViewModel architecture:[https://github.com/ebbi/TodoMVVM]
+
+---
+## About Installation (Installing and using the App)
+##### 1 Register/ Sign Up:
+Fill the Required Information and Sign Up.
+##### 2 Login:
+After Signing Up Login with the same credentials.
+###### 3 Todo List:
+Click on the floating Add icon and create the Todo List
+##### 4 Todo Item: 
+After creating a Todo List ,Now click on the list and create your Todo Items.
+##### 5 Editing the Todo Items
+Click on the Todo Item and edit it.
+##### 6 Deleting the todo items and list.
+You can delete Todolist or a todoItem.
+##### 7 Sorting or filtering out
+Sort the completed and incomplete Todo items.
+
 
 
 
@@ -131,8 +194,12 @@ OraganizingFilesByPackage Branch
 :-------------------------------------------------:|
 ![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |
 
+---
+<p align="center">
+<img src="https://user-images.githubusercontent.com/37651620/82111751-fc164e00-9766-11ea-9dff-8747f423750c.png" alt="" width="700" height="700">
+</p>
 
-
+---
 
 
 
@@ -184,13 +251,4 @@ When your app displays data or uses data in other ways, you usually want to take
 you can display all this interesting data to the user.Whenever the data changes, the onChanged() method of your observer is called.
 #
 ![](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/images/10-1-c-room-livedata-viewmodel/dg_app_architecture_UI.png)
----
-
-
-
-# FAQ
-
-- **How do I do install this app?**
-    - App is under development....................
-
 ---
