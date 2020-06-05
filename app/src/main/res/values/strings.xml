@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Full Stacked ToooDoo</string>
+
+    <string name="main_activity_name">All Tasks</string>
+    <string name="add_task_activity_name">Add a New Task</string>
+
+    <!-- Strings for MainActivity -->
+    <string name="priority_1">Top-Notch</string>
+    <string name="priority_2">Mid-Tier</string>
+    <string name="priority_3">bottom</string>
+
+    <!-- Strings for AddTaskActivity -->
+    <!-- This etaskEntrytask has a unicode character for "..." = "&#8230;" -->
+    <string name="edit_task_description">Enter your TODO task.&#8230;</string>
+    <string name="priority_string">Preference order</string>
+
+    <string name="high_priority">Top Notch</string>
+    <string name="med_priority">Mid Tier</string>
+    <string name="low_priority">bottom</string>
+
+    <string name="add_button">+Add</string>
+    <string name="update_button">Update</string>
+</resources>
