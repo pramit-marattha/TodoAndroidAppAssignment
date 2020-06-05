@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/buttonhigh"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:text="Login"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:textSize="50dp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+                <ImageView
+                    android:id="@+id/loginImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/todo_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/username"
+                    android:text="Enter UserName"
+                    android:textAlignment="center"
+                    android:textColor="@color/greenDark"
+                    android:gravity="center_horizontal"
+                    android:drawableStart="@drawable/username" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameLoginInput"
+                    android:layout_width="match_parent"
+                    android:hint="Username"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={user.userName}"
+                    android:textColor="@color/exactly_grey"
+                    android:theme="@style/EditText.Green" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/lock"
+                    android:text=" Password"
+                    android:textAlignment="center"
+                    android:textColor="@color/exactly_grey"
+                    android:gravity="center_horizontal" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordLoginInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:hint="Password"
+                    android:singleLine="true"
+                    android:text="@={user.password}"
+                    android:textColor="@color/exactly_grey"
+                    android:theme="@style/EditText.Green" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp" />
+                <Button
+                    android:layout_width="300dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/buttonlow"
+                    android:onClick="@{clickHandler::onSignInClicked}"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/sign_up_for_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="187dp"
+                        android:layout_height="61dp"
+                        android:background="@drawable/buttonlow"
+                        android:onClick="@{clickHandler::onRegisterClicked}"
+                        android:text="Sign-UP"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    <data>
+        <variable
+            name="user"
+            type="com.np.pramitmarattha.database.EntireUserDatabase" />
+        <variable
+            name="clickHandler"
+            type="com.np.pramitmarattha.view.fragment.LoginFragment.LoginFragmentEventHandler" />
+    </data>
+</layout>

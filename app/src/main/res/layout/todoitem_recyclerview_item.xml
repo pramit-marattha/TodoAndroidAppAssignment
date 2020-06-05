@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backdesign">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/todoItemKoDropDownButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/drop_down" />
+                <ImageView
+                    android:id="@+id/todoListKoImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/list" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/todoListKoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxHeight="100dp"
+                android:maxLines="2"
+                android:text="@{todoItem.name}"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                tools:text="Todo Name" />
+            <TextView
+                android:id="@+id/todoListKoDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxWidth="100dp"
+                android:maxHeight="50dp"
+                android:maxLines="3"
+                android:text="@{todoItem.description}"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:text=" This is a todo task add description" />
+        </LinearLayout>
+    </LinearLayout>
+    <data>
+        <variable
+            name="todoItem"
+            type="com.np.pramitmarattha.database.TodoItem" />
+    </data>
+</layout>

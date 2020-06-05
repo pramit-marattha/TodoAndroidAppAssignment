@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clipChildren="true">
+
+    <LinearLayout
+        android:layout_width="361dp"
+        android:layout_height="323dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/buttonmid"
+        android:clipChildren="true"
+        android:maxWidth="300dp"
+        android:maxHeight="300dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:orientation="vertical"
+            android:padding="46dp"></LinearLayout>
+
+        <EditText
+            android:id="@+id/dialog_prompt_todo_item"
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/buttonmid"
+            android:hint="Enter your TODO here" />
+
+        <LinearLayout
+            android:layout_width="389dp"
+            android:layout_height="87dp"
+            android:orientation="vertical"
+            android:paddingLeft="130dp">
+
+            <Button
+                android:id="@+id/button_prompt_to_add"
+                android:layout_width="134dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonlow"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingRight="70dp"
+                android:text="+ADD"
+                android:textColor="@color/grey"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

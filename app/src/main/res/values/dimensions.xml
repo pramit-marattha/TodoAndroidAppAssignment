@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_eight">8dp</dimen>
+    <dimen name="dimen_sixteen">16dp</dimen>
+    <dimen name="textView_Ko_Height">55dp</dimen>
+</resources>

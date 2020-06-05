@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="todoList"
+            type="com.np.pramitmarattha.database.TodoList" />
+    </data>
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="45dp"
+        android:background="@drawable/todolisttask"
+        android:orientation="horizontal"
+        android:padding="38dp"
+        android:layout_marginLeft="45dp">
+        <ImageView
+            android:id="@+id/TodoitemView"
+            android:layout_width="23dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/cal" />
+        <TextView
+            android:id="@+id/todoListKoName"
+            android:layout_width="148dp"
+            android:layout_height="39dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="82dp"
+            android:layout_marginLeft="82dp"
+            android:layout_toEndOf="@id/TodoitemView"
+            android:layout_toRightOf="@id/TodoitemView"
+            android:fontFamily="sans-serif"
+            android:text="@{todoList.name}"
+            android:textColor="@color/lagbhag_black"
+            android:textSize="16sp"
+            tools:text="TodoList Name" />
+    </RelativeLayout>
+</layout>
