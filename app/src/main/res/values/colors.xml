@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Material color list from https://material.io/guidelines/style/color.html-->
+<resources>
+    <color name="colorPrimary">@color/grey</color>
+    <color name="colorPrimaryDark">@color/darkGrey</color>
+    <color name="colorAccent">@color/greenLight</color>
+    <color name="grey">#DCDCDC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="darkGrey">#A9A9A9</color>
+    <color name="greenLight">#008000</color>
+    <color name="greenDark">#006400</color>
+    <color name="black">#000000</color>
+    <color name="lagbhag_black">#37474F</color>
+    <color name="verygreen">#66BB6A</color>
+    <color name="greenishgreen">#4CAF50</color>
+    <color name="exactly_grey">#37474F</color>
+    <color name="darkkblue">#0D47A1</color>
+</resources>

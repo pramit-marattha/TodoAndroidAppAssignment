@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.np.pramitmarattha.view.fragment.TodoListsFragment.TodoListsFragmentEventHandler" />
+        <variable
+            name="noDataVisibility"
+            type="int" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/whale"
+        tools:context=".view.fragment.TodoListsFragment">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todoListRecycleView"
+            android:layout_width="match_parent"
+            android:background="@drawable/whale"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/whale"
+            android:visibility="@{noDataVisibility}">
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingAddActionListKo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="26dp"
+            android:onClick="@{clickHandler::onAddFabClicked}"
+            android:src="@drawable/add"
+            android:transitionName="@string/FAB_TRANSITION"
+            app:rippleColor="@color/white" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

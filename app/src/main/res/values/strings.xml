@@ -1,0 +1,23 @@
+<resources>
+    <string name="login_error_bata_auney_msg">Ohh!! you forgot to add</string>
+    <string name="WRONG_FORMAT">Wrong format!</string>
+    <string name="PASSWORDS_DONT_MATCH">Passwords don\'t match!</string>
+    <string name="RECORD_DOESNT_EXIST">Record was not found!</string>
+    <string name="unknownerror">Unknown Error oocurred</string>
+    <string name="PASSWORD_WRONG">Password is wrong!</string>
+    <string name="WELCOME">Cheers! Now SignIn and start ToDoing </string>
+    <string name="COULDNT_CREATE_USER">Couldn\'t create entireUserDatabase.</string>
+    <string name="Bahira_Niskida_aauney_MESSAGE">Are you sure ??</string>
+    <string name="TODOLIST_DELETED">Todolist Successfully Deleted!</string>
+    <string name="UNDO_DELETE">Undo</string>
+    <string name="FAB_TRANSITION">fab_transition</string>
+    <string name="NEW_ITEM_CREATED">New todo item created!</string>
+    <string name="yo_todo_is_blank">Yoo!! there is no todo ..create one ASAP!</string>
+
+    <string-array name="sortStringlist">
+        <item>List all Todo</item>
+        <item>Completed Todo</item>
+        <item>Incomplete Todo</item>
+    </string-array>
+
+</resources>

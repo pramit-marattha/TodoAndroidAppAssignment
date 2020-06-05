@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clipChildren="true">
+        <LinearLayout
+            android:layout_width="361dp"
+            android:layout_height="278dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/buttonmid"
+            android:clipChildren="true"
+            android:maxWidth="300dp"
+            android:maxHeight="300dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/signout_garda_auney_msg"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="56dp"
+                android:text="@{warningMessage}"
+                android:textColor="@color/lagbhag_black"
+                android:textSize="22sp"
+                tools:text="Do you want to Exit? " />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/nope_cancel_button"
+                    android:layout_width="145dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/buttonregister"
+                    android:onClick="@{clickHandler::onCancelBtnClicked}"
+                    android:text="NOPE!!!"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grey" />
+                <Button
+                    android:id="@+id/yup_ok_button"
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/buttonlow"
+                    android:onClick="@{clickHandler::onSureBtnClicked}"
+                    android:text="YUP!!!"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <data>
+        <variable
+            name="warningMessage"
+            type="String" />
+        <variable
+            name="clickHandler"
+            type="com.np.pramitmarattha.interfaceprompt.YesNoDialog.YesNoDialogEventHandler" />
+    </data>
+</layout>

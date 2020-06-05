@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/whale"
+            android:orientation="vertical">
+            <com.np.pramitmarattha.view.OptionsSelectorView
+                android:id="@+id/statusSelector"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundbutton"
+                android:entries="@array/sortStringlist"
+                app:groupTitle="Filter it out"
+                app:onOptionChanged="@{handler::todo_ko_priority}" />
+        </RelativeLayout>
+    <data>
+        <variable
+            name="handler"
+            type="com.np.pramitmarattha.view.fragment.FiltersFragment.EventHandler" />
+    </data>
+</layout>
