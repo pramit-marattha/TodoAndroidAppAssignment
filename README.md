@@ -12,42 +12,6 @@
 ![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)
 ---
 
-# Development Stages
-```bash
-├── Master
-|
-|---->|─ InitialStep Branch
-│     ├── Entity Branch
-│     ├── DataAccessObject branch
-│     ├── Database Branch
-│     ├── TypeConverter Branch
-│     ├── Thread runnable & executor Branch 
-│     ├── PopulateList Branch
-│     ├── DeleteList Branch
-│     ├── UpdateList branch
-│     ├── Live Data Branch
-│     ├── MainActivityViewModel Branch
-│     ├── AddEditTaskActivityViewModel Branch
-│     ├── Repository Branch
-│     ├── UserInterface Branch
-│     ├── Updating The Icons Branch
-│     ├── Updating the Task branch
-│     ├── Undo Feature Branch
-│     ├── SnackBarPopUPFeature after delete Branch
-│     ├── New AppIcon Branch
-│     ├── CustomDate Feature Brach
-│     ├── SpeechToText Branch
-│     ├── ConvertActivityToFragment Branch    
-│     ├── Login/SignUp-toSaveTODO branch       
-│     ├── RefinedUserInterface Branch
-│     ├── NavigationComponent-viewPager Branch        
-│<----├── WrappingInPackage-&-Apk-Export Branch        <-------- Current progress
-│   
-├── Final Phase(Apk Export)                       
-```
-
----
-
 
 ## Features
 Register          |  Sign-IN                      | Adding ToooDooo              |  Adding ToDo List
@@ -62,7 +26,6 @@ SpeechToText          |  Adding Name Description                   | Marking Com
 
 ---
 
-
 ## Downloads:
 
 | Platform | Architecture    | Version | Link                                                                                                                         |
@@ -70,6 +33,25 @@ SpeechToText          |  Adding Name Description                   | Marking Com
 | Android  | x64     | under construction   | [Download]()  |
 
 ---
+
+## About Installation (Installing and using the App)
+#### ***1 Register/ Sign Up:***
+Fill the Required Information and Sign Up.
+#### ***2 Login:***
+After Signing Up Login with the same credentials.
+##### ***3 Todo List:***
+Click on the floating Add icon and create the Todo List
+#### ***4 Todo Item:*** 
+After creating a Todo List ,Now click on the list and create your Todo Items.
+#### ***5 Editing the Todo Items:***
+Click on the Todo Item and edit it.
+#### ***6 Deleting the todo items and list:***.
+You can delete Todolist or a todoItem.
+#### ***7 Sorting or filtering out:***
+Sort the completed and incomplete Todo items.
+
+---
+
 ### Design Architecture 
 # `MODEL`
 * `adapter`  consists of recyclerviews adapters.<br>
@@ -111,6 +93,49 @@ SpeechToText          |  Adding Name Description                   | Marking Com
 *  `TodoItemViewModel`<br>
 
 ---
+
+# Development Stages
+```bash
+├── Master
+|
+|---->|─ InitialStep Branch
+│     ├── Entity Branch
+│     ├── DataAccessObject branch
+│     ├── Database Branch
+│     ├── TypeConverter Branch
+│     ├── Thread runnable & executor Branch 
+│     ├── PopulateList Branch
+│     ├── DeleteList Branch
+│     ├── UpdateList branch
+│     ├── Live Data Branch
+│     ├── MainActivityViewModel Branch
+│     ├── AddEditTaskActivityViewModel Branch
+│     ├── Repository Branch
+│     ├── UserInterface Branch
+│     ├── Updating The Icons Branch
+│     ├── Updating the Task branch
+│     ├── Undo Feature Branch
+│     ├── SnackBarPopUPFeature after delete Branch
+│     ├── New AppIcon Branch
+│     ├── CustomDate Feature Brach
+│     ├── SpeechToText Branch
+│     ├── ConvertActivityToFragment Branch    
+│     ├── Login/SignUp-toSaveTODO branch       
+│     ├── RefinedUserInterface Branch
+│     ├── NavigationComponent-viewPager Branch        
+│<----├── WrappingInPackage-&-Apk-Export Branch        
+│   
+├── Final Phase(Apk Export)                       <-------- Current progress
+```
+
+---
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/37651620/82111751-fc164e00-9766-11ea-9dff-8747f423750c.png" alt="" width="700" height="700">
+</p>
+
+---
+
 # `References`
 ### `Resources used to create this App`
 #### List of all modules , libraries & Repo-references to create this App:
@@ -136,24 +161,6 @@ SpeechToText          |  Adding Name Description                   | Marking Com
 19. Todo app Model View ViewModel architecture:[https://github.com/ebbi/TodoMVVM]
 
 ---
-## About Installation (Installing and using the App)
-#### ***1 Register/ Sign Up:***
-Fill the Required Information and Sign Up.
-#### ***2 Login:***
-After Signing Up Login with the same credentials.
-##### ***3 Todo List:***
-Click on the floating Add icon and create the Todo List
-#### ***4 Todo Item:*** 
-After creating a Todo List ,Now click on the list and create your Todo Items.
-#### ***5 Editing the Todo Items:***
-Click on the Todo Item and edit it.
-#### ***6 Deleting the todo items and list:***.
-You can delete Todolist or a todoItem.
-#### ***7 Sorting or filtering out:***
-Sort the completed and incomplete Todo items.
-
-
-
 
 # Detailed Documented process of each Branch
 InitialPhase Branch                                |  Entity Branch
@@ -190,17 +197,11 @@ SppechToText Branch                                | CustomDate Branch
 ![XK8laCyYBo](https://user-images.githubusercontent.com/37651620/82156096-e1dc8d00-9898-11ea-85de-2bdef7f144b0.gif)         |  ![9Wte9nXKLN](https://user-images.githubusercontent.com/37651620/82156420-ae9afd80-989a-11ea-88f8-c15c399b1722.gif)
 
 
-OraganizingFilesByPackage Branch                   | Activity to Fragment
+OraganizingFilesByPackage Branch                   | Activity to Fragment & Nav. component
 :-------------------------------------------------:|---------------------------------------------------:
-![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |![]()
+![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |![activityTofragment](https://user-images.githubusercontent.com/37651620/83865108-6bb7a180-a745-11ea-9965-d1ee35b68cad.gif)
 
 ---
-<p align="center">
-<img src="https://user-images.githubusercontent.com/37651620/82111751-fc164e00-9766-11ea-9dff-8747f423750c.png" alt="" width="700" height="700">
-</p>
-
----
-
 
 
 ## Documentation (Model–view–viewmodel architecture in a nutshell) 
