@@ -137,19 +137,19 @@ SpeechToText          |  Adding Name Description                   | Marking Com
 
 ---
 ## About Installation (Installing and using the App)
-##### 1 Register/ Sign Up:
+#### ***1 Register/ Sign Up:***
 Fill the Required Information and Sign Up.
-##### 2 Login:
+#### ***2 Login:***
 After Signing Up Login with the same credentials.
-###### 3 Todo List:
+##### ***3 Todo List:***
 Click on the floating Add icon and create the Todo List
-##### 4 Todo Item: 
+#### ***4 Todo Item:*** 
 After creating a Todo List ,Now click on the list and create your Todo Items.
-##### 5 Editing the Todo Items
+#### ***5 Editing the Todo Items:***
 Click on the Todo Item and edit it.
-##### 6 Deleting the todo items and list.
+#### ***6 Deleting the todo items and list:***.
 You can delete Todolist or a todoItem.
-##### 7 Sorting or filtering out
+#### ***7 Sorting or filtering out:***
 Sort the completed and incomplete Todo items.
 
 
@@ -190,9 +190,9 @@ SppechToText Branch                                | CustomDate Branch
 ![XK8laCyYBo](https://user-images.githubusercontent.com/37651620/82156096-e1dc8d00-9898-11ea-85de-2bdef7f144b0.gif)         |  ![9Wte9nXKLN](https://user-images.githubusercontent.com/37651620/82156420-ae9afd80-989a-11ea-88f8-c15c399b1722.gif)
 
 
-OraganizingFilesByPackage Branch      
-:-------------------------------------------------:|
-![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |
+OraganizingFilesByPackage Branch                   | Activity to Fragment
+:-------------------------------------------------:|---------------------------------------------------:
+![](https://user-images.githubusercontent.com/37651620/82150888-59022900-9879-11ea-91e7-41ea0ee6e4f3.gif) |![]()
 
 ---
 <p align="center">
