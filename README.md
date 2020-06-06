@@ -159,6 +159,7 @@ Sort the completed and incomplete Todo items.
 17. Creating Task Fragment:[https://github.com/ebbi/TaskFragment]
 18. TodoViewModel:[https://github.com/ebbi/TodoViewModel]
 19. Todo app Model View ViewModel architecture:[https://github.com/ebbi/TodoMVVM]
+20. Binay Sir's(ANdroid Todo): [https://github.com/binay-shah/android-todo]
 
 ---
 
