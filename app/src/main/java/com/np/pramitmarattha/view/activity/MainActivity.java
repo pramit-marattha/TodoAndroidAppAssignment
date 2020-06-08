@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewactivitymain);
+        setContentView(R.layout.activity_main);
         setupNavigation();
         viewModel = ViewModelProviders.of(this).get(authHandleHomeViewModel.class);
         viewModel.onAuthStatusChanged().observe(this, user -> {
